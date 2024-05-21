@@ -27,6 +27,7 @@
   <title>Frontend Mentor | In-browser markdown editor</title>
 </head>
 <body>
+  <main>
   <div class="main-container">
     
       <a href="#markdown-input" class="skip-nav-link">Skip to main content</a>
@@ -104,10 +105,11 @@
   </div>
 
 </div> 
+</main>
 <!-- main container end -->
 
 <!-- Alert "Delete Document" -->
-<dialog id="alert-delete" class="dialog" aria-modal="true" aria-labelledby="alert-delete-title" aria-describedby="alert-delete-desc">
+<dialog id="alert-delete" class="dialog" role="dialog" aria-modal="true" aria-labelledby="alert-delete-title" aria-describedby="alert-delete-desc">
   <div class="row-with-background bodyM">
     <button type="button" id="close-alert-delete" class="close-dialog-icon" aria-label="Cancel"></button>
     <h2 id="alert-delete-title" tabindex="-1">Delete this document?</h2>
