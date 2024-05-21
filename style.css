@@ -266,8 +266,10 @@ main{
   padding-right:1rem;
 }
 .btn-menu {
-  width:4.5rem;
+  width:4.5rem !important;
+  min-width:4.5rem; /* fix for Safari */
   height:4.5rem;
+  display:flex;
   background-color: var(--background-color-700);
   background-image: url(./assets/icon-menu.svg);
   background-repeat: no-repeat;
@@ -284,6 +286,7 @@ main{
   background-color: var(--accent-color1);
 }
 .label-doc-name {
+  width:min-content;
   display: grid;
   color:var(--background-color-400);
   background: url(./assets/icon-document.svg) no-repeat left 1.5rem center;
@@ -296,6 +299,7 @@ main{
   font-weight: 300;
 }
 .input-doc-name {
+  width:min-content;
   color:white;
   font-size: 0.938rem;
   font-weight: 400;
@@ -303,6 +307,7 @@ main{
   border:none;
   border-bottom: var(--bordertransparent);
   outline:none;
+  border-radius: 0;
 }
 .label-doc-name:hover .input-doc-name, .input-doc-name:active, .input-doc-name:focus {
   border-bottom: var(--border100);
@@ -674,6 +679,7 @@ footer a {
     }
     .btn-save#save-changes {
       width:2.5rem;
+      min-width:2.5rem; /* fix for Safari */
     }
     .btn-save#save-changes span{
       position:absolute;
@@ -704,6 +710,7 @@ footer a {
       overflow-y: visible;
     }
     .markdown-input{
+      max-width:90%;
       height:100%;
       display: block;
       min-height:fit-content;
