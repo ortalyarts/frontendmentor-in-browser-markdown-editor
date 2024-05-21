@@ -681,6 +681,11 @@ footer a {
       width:2.5rem;
       min-width:2.5rem; /* fix for Safari */
     }
+    .btn-save#save-changes svg {
+      width:1.063rem;
+      height:1.063rem;
+    }
+    /* Hiding button text on mobile devises */
     .btn-save#save-changes span{
       position:absolute;
       display:inline-block;
