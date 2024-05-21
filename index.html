@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="author" content="Ortalyarts" />
+  <meta
+    name="description"
+    content="In-browser markdown editor"
+  />
+  <meta
+    name="keywords"
+    content="markdown, compile, editor, webapp"
+  />
+  <meta
+    property="og:title"
+    content="Markdown editor"
+  />
+  <meta
+    property="og:description"
+    content="In-browser markdown editor"
+  />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  <title>Frontend Mentor | In-browser markdown editor</title>
+</head>
+<body>
+  <div class="main-container">
+    
+      <a href="#markdown-input" class="skip-nav-link">Skip to main content</a>
+
+    <nav id="side-nav">
+      <div class="side-nav-outer-container">
+        <div id="side-nav-container" >
+          <div class="logo" id="logo-mobilescreen"></div>
+          <h2 class="headingS">My Documents</h2>
+          <button type="button" class="btn-save" id="add-new-document">
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.88086 3.27979V4.5542H0.571289V3.27979H7.88086ZM4.90723 0.166992V7.93066H3.55225V0.166992H4.90723Z" fill="white"/>
+              </svg>
+            <span>New Document</span>
+          </button>
+          <ul id="nav-ul">
+            <!-- List with user documents -->
+          </ul>       
+        </div>  
+        <div class="switch-holder">
+          <div class="sun">
+            <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M2.7 9a.9.9 0 0 0-.9-.9H.9a.9.9 0 0 0 0 1.8h.9a.9.9 0 0 0 .9-.9Zm.576 4.5-.639.639a.9.9 0 0 0 0 1.269.9.9 0 0 0 1.269 0l.639-.639A.9.9 0 0 0 3.276 13.5ZM9 2.7a.9.9 0 0 0 .9-.9V.9a.9.9 0 0 0-1.8 0v.9a.9.9 0 0 0 .9.9Zm5.094 2.106a.9.9 0 0 0 .63-.261l.639-.639a.9.9 0 1 0-1.269-1.269l-.594.639a.9.9 0 0 0 0 1.269.9.9 0 0 0 .594.261Zm-10.8-.261a.9.9 0 0 0 1.269 0 .9.9 0 0 0 0-1.269l-.639-.639a.904.904 0 1 0-1.287 1.269l.657.639ZM17.1 8.1h-.9a.9.9 0 1 0 0 1.8h.9a.9.9 0 1 0 0-1.8Zm-2.376 5.4a.9.9 0 0 0-1.224 1.224l.639.639a.9.9 0 0 0 1.269 0 .9.9 0 0 0 0-1.269l-.684-.594ZM9 4.05A4.95 4.95 0 1 0 13.95 9 4.959 4.959 0 0 0 9 4.05Zm0 8.1a3.15 3.15 0 1 1 0-6.3 3.15 3.15 0 0 1 0 6.3Zm0 3.15a.9.9 0 0 0-.9.9v.9a.9.9 0 1 0 1.8 0v-.9a.9.9 0 0 0-.9-.9Z"/></svg>
+          </div> 
+          <label class="switch-container" for="theme-toggle-button">
+            <input name="theme-switch" id="theme-toggle-button" type="checkbox" >
+            <span class="screen-reader-only" id="toggle-announce" >switch to dark theme</span>
+          </label>
+          <div class="moon">
+            <svg width="17" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M16.141 8.804a.823.823 0 0 0-.864-.115 6.622 6.622 0 0 1-2.772.6A6.704 6.704 0 0 1 5.81 2.626 7.066 7.066 0 0 1 6.015.981a.823.823 0 0 0-1.094-.93 8.341 8.341 0 1 0 11.516 9.617.823.823 0 0 0-.296-.864Zm-7.814 5.503A6.696 6.696 0 0 1 4.164 2.404v.222a8.35 8.35 0 0 0 10.069 8.16 6.671 6.671 0 0 1-5.906 3.554v-.033Z"/></svg>
+          </div> 
+        </div>  
+      </div>
+    </nav>
+
+  <div class="top-and-editor">
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <button type="button" class="btn-menu" id="menu-icon" aria-haspopup="true" aria-expanded="false" aria-label="Open menu"></button>
+        <div class="logo" id="logo-widescreen">        
+          <img src="./assets/logo.svg" id="logo" alt="Markdown logo" width="129" height="11">
+        </div>
+        <label for="doc-name" class="label-doc-name">
+          <span>Document Name</span>
+          <input type="text" id="doc-name" class="input-doc-name" placeholder="Document name">
+        </label>
+      </div>
+      <div class="top-bar-right">
+        <button type="button" class="btn-delete" id="delete-icon" aria-label="Delete document">
+          <svg width="18" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 16a1 1 0 0 0 1-1V9a1 1 0 1 0-2 0v6a1 1 0 0 0 1 1ZM17 4h-4V3a3 3 0 0 0-3-3H8a3 3 0 0 0-3 3v1H1a1 1 0 1 0 0 2h1v11a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V6h1a1 1 0 0 0 0-2ZM7 3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v1H7V3Zm7 14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6h10v11Zm-3-1a1 1 0 0 0 1-1V9a1 1 0 0 0-2 0v6a1 1 0 0 0 1 1Z" /></svg>
+        </button>
+        <button type="button" class="btn-save" id="save-changes">
+          <svg width="17" height="17" xmlns="http://www.w3.org/2000/svg"><path d="M15.91 5.931 10.575.598A.889.889 0 0 0 10.29.41.969.969 0 0 0 9.945.34H2.834A2.667 2.667 0 0 0 .167 3.007v10.666a2.667 2.667 0 0 0 2.667 2.667H13.5a2.667 2.667 0 0 0 2.667-2.667v-7.11a.889.889 0 0 0-.258-.632ZM5.5 2.118h3.556v1.778H5.5V2.118Zm5.334 12.444H5.5v-2.666c0-.491.398-.89.89-.89h3.555c.49 0 .889.399.889.89v2.666Zm3.555-.889c0 .491-.398.89-.889.89h-.889v-2.667a2.667 2.667 0 0 0-2.666-2.667H6.389a2.667 2.667 0 0 0-2.666 2.667v2.666h-.89a.889.889 0 0 1-.888-.889V3.007c0-.491.398-.89.889-.89h.889v2.667c0 .491.398.89.888.89h5.334c.49 0 .889-.399.889-.89V3.371l3.555 3.556v6.746Z" /></svg>
+          <span>Save Changes</span>
+        </button>
+      </div>
+    </div>
+    
+  
+    <div id="editor">
+      <section class="left" aria-label="Markdown" id="markdown-section">
+        <h2 class="headingS section-title">Markdown</h2>
+        <label for="markdown-input" class="screen-reader-only">Markdown editor window - type your text here</label>
+        <textarea class="markdown-input" id="markdown-input" ></textarea>
+      </section>
+      <section class="right" aria-label="Preview" id="preview-section">
+        <h2 class="headingS section-title">
+          <span>Preview</span>
+          <button type="button" id="preview-full-screen" class="full-screen-icon" aria-label="Enter full screen mode">
+            <svg width="16" height="12" xmlns="http://www.w3.org/2000/svg"><path d="M7.784.003c4.782-.144 7.597 4.31 8.109 5.198a.8.8 0 0 1 0 .8c-.688 1.2-3.255 5.086-7.677 5.198h-.2c-4.71 0-7.405-4.326-7.909-5.198a.8.8 0 0 1 0-.8C.803 4.001 3.362.115 7.784.003Zm.38 1.6h-.3c-3.199.08-5.286 2.71-6.086 3.998C2.482 6.73 4.73 9.68 8.176 9.6c3.199-.08 5.262-2.711 6.086-3.999-.712-1.127-2.967-4.086-6.398-3.998ZM8 2.803A2.799 2.799 0 1 1 8 8.4a2.799 2.799 0 0 1 0-5.598Zm0 1.599A1.2 1.2 0 1 0 8 6.8a1.2 1.2 0 0 0 0-2.4Z"/></svg>
+          </button>
+        </h2>
+        <div class="html-preview" id="html-preview" aria-label="Preview window - here is the rendered markdown"></div>
+      </section>
+    </div>
+  </div>
+
+</div> 
+<!-- main container end -->
+
+<!-- Alert "Delete Document" -->
+<dialog id="alert-delete" class="dialog" aria-modal="true" aria-labelledby="alert-delete-title" aria-describedby="alert-delete-desc">
+  <div class="row-with-background bodyM">
+    <button type="button" id="close-alert-delete" class="close-dialog-icon" aria-label="Cancel"></button>
+    <h2 id="alert-delete-title" tabindex="-1">Delete this document?</h2>
+    <p id="alert-delete-desc">Are you sure you want to delete the 'welcome.md' document and its contents? This action cannot be reversed.</p>
+    <button class="btn-save" id="confirm-delete-btn">Confirm & Delete</button>
+  </div>
+</dialog>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="./purify.js"></script>
+  
+
+
+
+  <script src="main.js"></script>
+</body>
+</html>
