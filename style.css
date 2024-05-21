@@ -3,6 +3,10 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
 }
 body, h1, h2, h3, h4, p, figure, blockquote, dl, dd, ul {
   margin: 0;
@@ -683,7 +687,7 @@ footer a {
       min-width:2.5rem; /* fix for Safari */
     }
     .btn-save#save-changes svg {
-      width:1.063rem;
+      min-width:1.063rem;
       height:1.063rem;
     }
     /* Hiding button text on mobile devises */
@@ -708,14 +712,16 @@ footer a {
     .top-bar{
       max-width:100%;
       display:inline-block;
-      /* display:grid;
-      grid-template-columns: auto auto; */
     }
     .top-bar > * {
-      float:left;
+      display:inline-block;
+    }
+    .top-bar-left > *, .top-bar-right > * {
+      display:inline-block;
+      vertical-align:middle;
     }
     .input-doc-name {
-      width:6.25rem;
+      max-width:7rem;
     }
     /* END fix */
     section.left, section.right {
