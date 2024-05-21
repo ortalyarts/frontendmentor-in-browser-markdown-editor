@@ -675,6 +675,7 @@ footer a {
     .btn-menu[aria-expanded="true"] {
       position:absolute;
       z-index: 3;
+      top:0;
       left:11.125rem;
     }
     .btn-save#save-changes {
@@ -703,6 +704,20 @@ footer a {
       background: url(./assets/icon-document.svg) no-repeat left center;
       border-left:none;
     }
+    /* fix for Safari to avoid extra space */
+    .top-bar{
+      max-width:100%;
+      display:inline-block;
+      /* display:grid;
+      grid-template-columns: auto auto; */
+    }
+    .top-bar > * {
+      float:left;
+    }
+    .input-doc-name {
+      width:6.25rem;
+    }
+    /* END fix */
     section.left, section.right {
       width:100%;
     }
